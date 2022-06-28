@@ -1,0 +1,122 @@
+/* (é o 3 pq é o terceiro filho de main)
+.bicicletas-bg:nth-child(3) 
+mas acabou q tirei a div bicicletas-bg dos itens 2 e 4*/
+.bicicletas-bg {
+  background: linear-gradient(to right, var(--cor-0) 30%, var(--cor-11) 30%);
+  /* box-shadow: inset 120px 0 white;
+  n funciona pq o width fica fixo */
+}
+
+.bicicletas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background: url("../../img/dec/top-right.svg") no-repeat top 40px right 20px;
+}
+.bicicletas-imagem {
+  /* position: relative; */
+  display: grid;
+}
+
+.bicicletas-imagem img {
+  grid-area: 1 / 1;
+}
+.bicicletas-imagem span {
+  background: var(--cor-12);
+  padding: 8px 16px 8px 8px;
+  border-radius: 4px 0px 0px 4px;
+  display: inline-block;
+  grid-area: 1 / 1;
+  place-self: start end;
+  margin-top: 20px;
+  /* position: absolute;
+top: 20px;
+right: 0px; */
+}
+
+.bicicletas-conteudo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: start;
+
+}
+.bicicletas-conteudo h2,
+p {
+  grid-column: 1 / -1;
+}
+
+.bicicletas-conteudo h2 {
+  margin-bottom: 20px;
+}
+.bicicletas-conteudo h2::before {
+  content: "";
+  height: 8px;
+  width: 12px;
+  background-color: var(--cor-p1);
+  margin-bottom: 8px;
+  display: block;
+  /* (o block faz pega altura e largura) */
+}
+
+.bicicletas-conteudo p {
+  margin-bottom: 32px;
+}
+
+.bicicletas-conteudo .botao {
+  place-self: end;
+}
+
+.bicicletas-conteudo li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* .bicicletas-conteudo li + li {
+  margin-top: 16px;
+} */
+.bicicletas-conteudo ul {
+  display: grid;
+  gap: 16px;
+}
+
+.bicicletas-conteudo img {
+  width: 24px;
+  /* margin-right: 8px; */
+}
+
+@media (max-width: 800px) {
+  .bicicletas {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .bicicletas-bg {
+    background: var(--cor-11);
+  }
+}
+@media (max-width: 600px) {
+  .bicicletas-conteudo {
+    grid-template-columns: 1fr;
+  }
+  .bicicletas-conteudo .botao {
+    place-self: start;
+    /* margin-top: 32px; */
+  }
+  .bicicletas-conteudo ul {
+    margin-bottom: 32px;
+    grid-template-columns: 1fr 1fr;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .bicicletas-imagem span {
+    font-size: 0.9rem;
+    padding: 6px 10px 6px 6px;
+    margin-top: 10px;
+  }
+}
