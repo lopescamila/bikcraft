@@ -54,11 +54,11 @@
   transform: rotate(180deg);
 }
 
-.perguntas dd {
+.js .perguntas dd {
   display: none;
 }
-
-.perguntas dd.ativa {
+/* na aula ta block */
+.js .perguntas dd.ativa {
   display: grid;
 }
 
